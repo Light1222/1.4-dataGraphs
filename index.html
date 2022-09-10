@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>1.4 Data Graphs</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div style='width: 500px'>
+    <canvas id="myChart"></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['California', 'Texas', 'Florida' ],
+            datasets: [{
+                label: 'population',
+                data: [39, 30, 22],
+                backgroundColor: [
+                    'rgba(0, 225, 132, 0.2)',
+                    'rgba(225, 30, 30, 0.2)',
+                    'rgba(0, 0, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(0, 225, 0, 1)',
+                    'rgba(255, 30, 30, 1)',
+                    'rgba(0, 0, 255, 1)'
+                ],
+                borderWidth: 5
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            indexAxis: 'y'
+        }
+    });
+</script>
+<div style="width: 500px">
+<canvas id="myChart2"></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('myChart2');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['California', 'Texas', 'Florida'],
+            datasets: [{
+                data:[37, 38, 39, 39.5, 39.5, 39],
+                label:'California',
+                borderColor: 'rgba(120, 120, 255, 1)'
+            },
+                {
+                    data:[25, 26, 27, 28, 28.5, 30],
+                    label:'Texas',
+                    borderColor: 'rgba(255, 100, 255, 1)'
+                }, {
+                    data:[19, 19, 20, 20.5, 21, 21.5],
+                    label:'Florida',
+                    borderColor: 'rgba(100, 200, 100, 1)'
+                }]
+        },
+        options:{
+            plugins:{
+                title:{
+                    display: true,
+                    text: 'Growth of population(in millions)'
+                },
+                legend: {
+                    position: 'left'
+                }
+            }
+        }
+    });
+</script>
+<div style="width: 500px">
+<canvas id='chart3'></canvas>
+</div>
+<script>
+    var cty = document.getElementById('chart3');
+    var nextChart = new Chart(cty, {
+        type: 'scatter',
+        data: {
+            datasets:[{
+                label: 'California',
+                backgroundColor: 'rgba(225, 200, 50, 1)',
+                pointBackgroundColor: 'rgba(255, 200, 50, 1)',
+                pointRadius: 4,
+                data: [
+                    {x: 10, y: 37},
+                    {x: 12, y: 38},
+                    {x: 14, y: 38.5},
+                    {x: 16, y: 39},
+                    {x: 18, y: 39.5},
+                    {x: 20, y: 39.5}
+                ]
+            }, {
+                label: 'Texas',
+                backgroundColor: 'rgba(50, 200, 50, 1)',
+                pointBackgroundColor: 'rgba(50, 200, 50, 1)',
+                pointRadius: 4,
+                data: [
+                    {x: 10, y: 25},
+                    {x: 12, y: 26},
+                    {x: 14, y: 27},
+                    {x: 16, y: 28},
+                    {x: 18, y: 28.5},
+                    {x: 20, y: 29}
+                ]
+            }, {
+                label: 'Florida',
+                backgroundColor: 'rgba(10, 0, 0, .2)',
+                pointBackgroundColor: 'rgba(10, 0, 0, .5)',
+                pointRadius: 4,
+                data: [
+                    {x: 10, y: 19},
+                    {x: 12, y: 19},
+                    {x: 14, y: 20},
+                    {x: 16, y: 20.5},
+                    {x: 18, y: 21},
+                    {x: 20, y: 21.5}
+                ]
+            },
+            ]
+        },
+        options: {
+            scales: {
+                xAxis: {
+                    beginAtZero: true
+                },
+                yAxis: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display:true,
+                    text: 'growth of population(millions)'
+                }
+            }
+        }
+    })
+</script>
+<div style='width: 500px'>
+    <canvas id='myChart4'></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('myChart4');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['California', 'Texas', 'florida'],
+            datasets: [{
+                label:'My First Doughnut Today',
+                data:[39, 30, 22],
+                backgroundColor:[
+                    'rgb(50, 150, 240)',
+                    'rgb(255, 200, 80)',
+                    'rgb(255, 99, 150)'
+                ],
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: '2021 population comparison'
+                }
+            }
+        }
+    })
+</script>
+<body>
+
+</body>
+</html>
